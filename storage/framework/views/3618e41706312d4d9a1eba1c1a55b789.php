@@ -1,8 +1,6 @@
-@extends('layouts.main')
+<?php $__env->startSection('content'); ?>
 
-@section('content')
 
-{{-- @include('layouts.navbar') --}}
 
 <div class="row justify-content-center">
     <div class="col-md-4">
@@ -30,4 +28,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /media/ahmad/04B42BEAB42BDD44/ikal/POLINEMA/SEMESTER 3/PBL/resources/views/login.blade.php ENDPATH**/ ?>
