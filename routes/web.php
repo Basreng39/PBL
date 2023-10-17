@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\AdminController;
+use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home',[
-        "title" => "KOSCantik Kediri",
-    ]);
-});
+Route::get('/', [HomeController::class,"index"]);
 
-Route::get("/login", function (){
-    return view("login",[
-        "title" => "KSC | Login",
-    ]);
-});
+Route::get("/login", [LoginController::class,"index"]);
+
+Route::get("/admin",[AdminController::class,"index"]);
