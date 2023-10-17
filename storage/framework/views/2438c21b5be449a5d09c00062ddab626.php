@@ -17,8 +17,6 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
-
-    
     
 </head>
 <body>
@@ -30,5 +28,6 @@
 
 
 <script src="js/sidebar.js"></script>
+<script src="js/db.js"></script>
 </html>
 <?php /**PATH /media/ahmad/04B42BEAB42BDD44/ikal/POLINEMA/SEMESTER 3/PBL/resources/views/layouts/main.blade.php ENDPATH**/ ?>

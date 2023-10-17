@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
 <main>
+    
     <?php echo $__env->make('admin.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </main>
 <?php $__env->stopSection(); ?>

@@ -28,4 +28,5 @@
 
 {{-- My Js Style --}}
 <script src="js/sidebar.js"></script>
+<script src="js/db.js"></script>
 </html>
