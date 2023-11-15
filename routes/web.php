@@ -20,3 +20,4 @@ Route::get("/admin",[AdminController::class,"index"]);
 Route::get("/admin/kamar",[AdminController::class,"kamar"]);
 
 Route::get("/",[AdminController::class,"login"]);
+Route::post("/login",[AdminController::class,"auth"]);

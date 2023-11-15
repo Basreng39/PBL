@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -22,5 +24,22 @@ class AdminController extends Controller
         return view("dashboard.login",[
             "judul" => "Admin Login"
         ]);
+    }
+
+    public function auth(Request $request){
+        $valid = $request->validate([
+            "email" => "required|email:dns",
+            "password" => "required",
+        ]);
+
+        if(Auth::attempt($valid)){
+            $request->session()->regenerate();
+
+            return redirect()->intended("/admin");
+        }
+
+        return back()->with("fail","Login Gagal");
+
+        // dd("Berhasil");
     }
 }
