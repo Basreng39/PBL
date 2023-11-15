@@ -39,7 +39,14 @@ class AdminController extends Controller
         }
 
         return back()->with("fail","Login Gagal");
+    }
 
-        // dd("Berhasil");
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect("/");
     }
 }

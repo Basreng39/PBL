@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get("/admin",[AdminController::class,"index"]);
+Route::get("/",[AdminController::class,"login"]);
+Route::post("/login",[AdminController::class,"auth"])->middleware("guest")->name("login");
 
+Route::get("/admin",[AdminController::class,"index"])->middleware("auth");
 Route::get("/admin/kamar",[AdminController::class,"kamar"]);
 
-Route::get("/",[AdminController::class,"login"]);
-Route::post("/login",[AdminController::class,"auth"]);
+Route::post("/logout",[AdminController::class,"logout"]);
+

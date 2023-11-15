@@ -13,10 +13,15 @@
         <ul class="nav navbar-nav">
           <li class="nav-item dropdown mx-3">
             <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="hidden-xs">ROLE USER DISINI </span>
+                <span class="hidden-xs">{{ auth()->user()->name }} </span>
             </a>
             <ul class="dropdown-menu">
-                <li><a class="btn dropdown-item" href="#">Sign Out</a></li>
+                <li>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button class="dropdown-item" type="submit">Sign Out</button>
+                    </form>
+                </li>
             </ul>
           </li>
 

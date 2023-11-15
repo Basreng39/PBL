@@ -10,15 +10,15 @@
             <tbody>
                 <tr>
                   <td>Nama</td>
-                  <td>nama user here</td>
+                  <td>{{ auth()->user()->name }}</td>
                 </tr>
                 <tr>
                   <td>Alamat</td>
-                  <td>ALAMAT USER HERE</td>
+                  <td>{{ auth()->user()->alamat }}</td>
                 </tr>
                 <tr>
                   <td>Nomor</td>
-                  <td>NOMOR USER HERE</td>
+                  <td>{{ auth()->user()->no_hp }}</td>
                 </tr>
             </tbody>
         </table>
