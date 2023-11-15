@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Kamar;
 
 class AdminController extends Controller
 {
@@ -14,9 +15,11 @@ class AdminController extends Controller
         ]);
     }
 
-    public function kamar(){
+    public function kamar(Kamar $kamar){
         return view('kamar',[
-            "judul" => "Data Kamar"
+            "judul" => "Data Kamar",
+            "total" => $kamar->all()->count(),
+            "kamar" => $kamar->all()
         ]);
     }
 
@@ -48,5 +51,9 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
         return redirect("/");
+    }
+
+    public function lihatKamar(){
+        // Kamar
     }
 }

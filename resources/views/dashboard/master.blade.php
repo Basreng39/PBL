@@ -30,6 +30,7 @@
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
