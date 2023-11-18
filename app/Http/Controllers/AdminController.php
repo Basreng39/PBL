@@ -44,4 +44,10 @@ class AdminController extends Controller
 
         return redirect("/");
     }
+
+    public function laporan(){
+        return view("laporan",[
+            "judul" => "Laporan"
+        ]);
+    }
 }

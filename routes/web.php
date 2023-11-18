@@ -25,3 +25,4 @@ Route::get("/admin",[AdminController::class,"index"])->middleware("auth");
 Route::get("/admin/tambah",[KamarController::class,"tambahKamar"])->middleware("auth");
 Route::get("/admin/kamar",[KamarController::class,"kamar"])->middleware("auth");
 
+Route::get("/admin/laporan",[AdminController::class,"laporan"])->middleware("auth");

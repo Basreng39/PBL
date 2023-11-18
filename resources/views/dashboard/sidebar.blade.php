@@ -35,7 +35,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#laporan" class="text-decoration-none">
+          <a href="/admin/laporan" class="text-decoration-none">
             <i class="fa fa-file"></i> <span>Laporan</span>
           </a>
         </li>
