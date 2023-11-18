@@ -15,25 +15,27 @@
           <div class="m-2 col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary"></strong>
             <h3 class="mb-3 ">Data Kamar</h3>
-            <a href="/kamar/tambah" class="btn btn-outline-primary btn-sm col-lg-1 col-md-2 col-sm-3"><i class="fa fa-plus" aria-hidden="true"></i> Kamar</a>
+            <a href="/admin/tambah" class="btn btn-outline-primary btn-sm col-lg-1 col-md-2 col-sm-3"><i class="fa fa-plus" aria-hidden="true"></i> Kamar</a>
           </div>
           {{-- <div class="col-auto d-none d-lg-block">
             <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
           </div> --}}
         </div>
+        <h5 class="ms-auto">Total Kamar {{ $total }}</h5>
     </div>
 
 
-    <h5 class="ms-auto">Total Kamar {{ $total }}</h5>
-
     <div class="row">
+        {{ $kamar->links() }}
+
         @foreach ($kamar as $k)
-            <div class="col-md-2">
+            <div class="col-md-4 col-sm-4">
 
                 <ul class="nav nav-tabs nav-primary" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="tab" href="#{{ $k->id }}" role="tab" aria-selected="false">
+                    <li class="nav-item" >
+                        <a class="nav-link" href="#K{{ $k->id }}" role="tab" aria-selected="false">
+
                             <div class=" align-items-center">
                                 <div class="tab-icon">
                                     <i class="fa fa-3x fa-bed" aria-hidden="true"></i><br>
@@ -47,17 +49,37 @@
                 </ul>
             </div>
         @endforeach
-
     </div>
 
+    @foreach ($kamar as $k)
+        <div class="row mt-4 {{ Request::is('#') ? 'show' : 'd-none' }}" id="DK{{ $k->id }}">
 
-    {{-- <div class="row row-cols-1  row-cols-md-2 row-group">
-        <div class="col-lg-6 col-sm-6 fs-4 ">
-            <a href="#Tamah" class="btn btn-outline-primary btn-sm"><i
-                    class="bx bx-plus"></i> Kamar</a>
+            <div class="card">
+                <h5 class="card-header">No {{ $k->id  }} {{ $k->nama_kamar }}</h5>
+                <div class="card-body">
+                <h3 class="card-title text-bold"> Rp {{ number_format($k->harga) }}</h3>
+                <p class="card-text">Jenis : {{ $k->jenis }}</p>
+                <p class="card-text">Status: {{ $k->status }}</p>
+                <p class="card-text">Keterangan: {{ $k->keterangan }}</p>
+                </div>
+            </div>
         </div>
-    </div>
-     --}}
+    @endforeach
 </div>
+
+<script src="{{ asset('js/jQuery.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+
+            var kamarId = $(this).attr('href').replace('#K', '');
+
+            $('[id^="DK"]').addClass('d-none');
+
+            $('#DK' + kamarId).removeClass('d-none');
+        });
+    });
+</script>
 
 @endsection

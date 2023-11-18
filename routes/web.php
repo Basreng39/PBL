@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KamarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",[AdminController::class,"login"])->middleware("guest")->name("login");
 Route::post("/login",[AdminController::class,"auth"]);
+Route::post("/logout",[AdminController::class,"logout"]);
 
 Route::get("/admin",[AdminController::class,"index"])->middleware("auth");
-Route::get("/admin/kamar",[AdminController::class,"kamar"]);
 
-Route::post("/logout",[AdminController::class,"logout"]);
+Route::get("/admin/tambah",[KamarController::class,"tambahKamar"])->middleware("auth");
+Route::get("/admin/kamar",[KamarController::class,"kamar"])->middleware("auth");
 
