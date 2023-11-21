@@ -19,8 +19,12 @@ class KamarController extends Controller
     }
 
     public function tambahKamar(){
-        return view("tambah",[
+        return view("tambah_kamar",[
             "judul" => "Tambah Kamar"
         ]);
+    }
+
+    public function store(Request $request){
+        dd($request);
     }
 }

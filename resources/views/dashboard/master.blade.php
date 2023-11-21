@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pem.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/aktf.css') }}">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">

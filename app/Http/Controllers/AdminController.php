@@ -50,4 +50,16 @@ class AdminController extends Controller
             "judul" => "Laporan"
         ]);
     }
+
+    public function pembayaran(){
+        return view("pembayaran",[
+            "judul" => "Pembayaran Kost Online"
+        ]);
+    }
+
+    public function penyewaAktif(){
+        return view ("dashboard.penyewa.aktif",[
+            "judul" => "Penyewa Aktif"
+        ]);
+    }
 }

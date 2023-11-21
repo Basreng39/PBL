@@ -21,14 +21,14 @@
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#aktif" class="text-decoration-none"><i class="fa fa-circle-o"></i>Penyewa Aktif</a></li>
+            <li><a href="/admin/penyewa/aktif" class="text-decoration-none"><i class="fa fa-circle-o"></i>Penyewa Aktif</a></li>
             <li><a href="#riwayat" class="text-decoration-none"><i class="fa fa-circle-o"></i>Riwayat Penyewa</a></li>
             <li><a href="#tambah" class="text-decoration-none"><i class="fa fa-circle-o"></i>Tambah Penyewa</a></li>
           </ul>
         </li>
 
         <li class="treeview">
-            <a href="#pembayaran" class="text-decoration-none">
+            <a href="/admin/pembayaran" class="text-decoration-none">
                   <i class="fa fa-bitcoin"></i>
               <i></i> <span>Pembayaran</span>
             </a>

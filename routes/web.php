@@ -22,7 +22,11 @@ Route::post("/logout",[AdminController::class,"logout"]);
 
 Route::get("/admin",[AdminController::class,"index"])->middleware("auth");
 
-Route::get("/admin/tambah",[KamarController::class,"tambahKamar"])->middleware("auth");
 Route::get("/admin/kamar",[KamarController::class,"kamar"])->middleware("auth");
+Route::get("/admin/tambah",[KamarController::class,"tambahKamar"])->middleware("auth");
+Route::post("/admin/tambah",[KamarController::class,"store"])->middleware("auth");
+
+Route::get("/admin/penyewa/aktif",[AdminController::class,"penyewaAktif"])->middleware("auth");
 
 Route::get("/admin/laporan",[AdminController::class,"laporan"])->middleware("auth");
+Route::get("/admin/pembayaran",[AdminController::class,"pembayaran"])->middleware("auth");
