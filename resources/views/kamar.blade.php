@@ -53,6 +53,7 @@
                 <p class="card-text">Jenis : {{ $k->jenis }}</p>
                 <p class="card-text">Status: {{ $k->status }}</p>
                 <p class="card-text">Keterangan: {{ $k->keterangan }}</p>
+                <p class="card-text"> <img src="{{ asset("storage/" . $k->gambar) }}" ></p>
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@ class AdminController extends Controller
 
     public function auth(Request $request){
         $valid = $request->validate([
-            "email" => "required|email:dns",
+            "email" => "required|email",
             "password" => "required",
         ]);
 
@@ -60,6 +60,12 @@ class AdminController extends Controller
     public function penyewaAktif(){
         return view ("dashboard.penyewa.aktif",[
             "judul" => "Penyewa Aktif"
+        ]);
+    }
+
+    public function tambahPenyewa(){
+        return view("tambah_penyewa",[
+            "judul" => "Tambah Data Penyewa",
         ]);
     }
 }

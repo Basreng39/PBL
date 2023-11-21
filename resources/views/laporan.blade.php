@@ -49,16 +49,6 @@
               </td>
               <td>-</td>
             </tr>
-            <tr>
-              <th scope="row">date 2</th>
-              <td>user</td>
-              <td>ket</td>
-            </tr>
-            <tr>
-              <th scope="row">date 3</th>
-              <td>user</td>
-              <td>-</td>
-            </tr>
         </tbody>
     </table>
 </div>

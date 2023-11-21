@@ -25,6 +25,17 @@ class KamarController extends Controller
     }
 
     public function store(Request $request){
-        dd($request);
+        // return $request->file("gambar")->store("images");
+
+        $data = new Kamar();
+        $data->nama_kamar = $request->nama_kamar;
+        $data->jenis = $request->jenis;
+        $data->status = $request->status;
+        $data->harga = $request->harga;
+        $data->gambar = $request->gambar->store("images");
+        $data->keterangan = $request->detail;
+        $data->save();
+
+        return redirect("/admin/tambah")->with("success","data berhasil di simpan");
     }
 }

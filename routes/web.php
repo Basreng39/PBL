@@ -27,6 +27,7 @@ Route::get("/admin/tambah",[KamarController::class,"tambahKamar"])->middleware("
 Route::post("/admin/tambah",[KamarController::class,"store"])->middleware("auth");
 
 Route::get("/admin/penyewa/aktif",[AdminController::class,"penyewaAktif"])->middleware("auth");
+Route::get("/admin/penyewa/tambah",[AdminController::class,"tambahPenyewa"])->middleware("auth");
 
 Route::get("/admin/laporan",[AdminController::class,"laporan"])->middleware("auth");
 Route::get("/admin/pembayaran",[AdminController::class,"pembayaran"])->middleware("auth");
